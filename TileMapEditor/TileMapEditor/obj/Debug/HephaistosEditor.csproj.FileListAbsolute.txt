@@ -18,3 +18,10 @@ C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\obj\Deb
 C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\obj\Debug\TileMapEditor.application
 C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\obj\Debug\TileMapEditor.exe
 C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\obj\Debug\TileMapEditor.pdb
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\bin\Debug\SFML.Graphics.dll
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\bin\Debug\SFML.System.dll
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\bin\Debug\SFML.Window.dll
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\bin\Debug\SFML.Graphics.xml
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\bin\Debug\SFML.System.xml
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\bin\Debug\SFML.Window.xml
+C:\Users\lenny\Desktop\coucoulescopains\papu\TileMapEditor\TileMapEditor\obj\Debug\HephaistosEditor.csproj.CopyComplete

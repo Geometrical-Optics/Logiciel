@@ -17,6 +17,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SFML.Graphics;
+using System.IO;
 
 namespace TileMapEditor
 {
