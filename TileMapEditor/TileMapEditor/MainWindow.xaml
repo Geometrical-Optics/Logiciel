@@ -1,0 +1,188 @@
+﻿<Window x:Class="TileMapEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TileMapEditor"
+        mc:Ignorable="d"
+        Title="Hephaistos Tile Map Editor" Height="720" Width="1280"
+        WindowState="Maximized">
+    
+        
+        <Grid >
+
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#444444" Offset="0"/>
+                <GradientStop Color="#222222" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+
+
+
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top" Background="LightGray" Height="19">
+                <Menu.Items>
+                    <MenuItem Header="Fichier" DataContext="{Binding File}">
+                        <MenuItem Header="Nouveau" Command="{Binding NewCommand}" />
+                        <MenuItem Header="Ouvrir..." Command="{Binding OpenCommand}" />
+                        <MenuItem Header="Enregistrer" Click="Save_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Edition" DataContext="{Binding Editor}">
+                        <MenuItem Header="Ajouter une Texture" Click="addTextureButton_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Aide" DataContext="{Binding Help}">
+                        <MenuItem Header="A propos..." Click="About" />
+                        <MenuItem Header="Quitter" Click="Quit"/>
+                    </MenuItem>
+                </Menu.Items>
+            </Menu>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*"/>
+                    <!-- Colonne "Divers" -->
+                    <ColumnDefinition Width="65*"/>
+                    <!-- Colonne pour le TileMap -->
+                    <ColumnDefinition Width="20*"/>
+                    <!-- Colonne "Chunk" -->
+                </Grid.ColumnDefinitions>
+
+                
+
+                
+                
+                    
+                        
+                            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+
+                    
+
+                    <ListView Name="loadedTextures" SelectionMode="Single" ItemsSource="{Binding Textures}" SelectionChanged="myListView_SelectChanged" Background="#444444">
+
+
+                        <ListView.Resources>
+                            <LinearGradientBrush x:Key="ListViewItemBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="GreenYellow" Offset="0"/>
+                                <GradientStop Color="#222222" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ListView.Resources>
+
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Background" Value="{StaticResource ListViewItemBackgroundBrush}"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+
+
+
+                        <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding Path}" Height="50" Width="50"/>
+                                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Grid.Column="1" Padding="15"/>
+                                            </Grid>
+
+                                        </DataTemplate>
+
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollViewer>
+                        
+                        <Image Grid.Row="1"/>
+                    
+
+
+                
+
+
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="1">
+
+                    <Grid x:Name="Chunk">
+                        
+                        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            
+                                <Grid x:Name="grid">
+                                    
+                                </Grid>
+                                
+
+                            </ScrollViewer>
+                    </Grid>
+
+
+                </Border>
+
+
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2">
+
+                    <Grid>
+
+                        <Grid.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="BorderBrush" Value="Black"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Style>
+                        </Grid.Resources>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="Patreon" Grid.Row="0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                        <Grid Grid.Row="1" x:Name="textureOfTheCell">
+                            
+                        </Grid>
+
+                    </Grid>
+
+                </Border>
+
+
+
+            </Grid>
+            
+               
+
+
+            
+
+     
+
+
+            
+
+
+
+            
+
+
+            
+
+
+
+
+        </DockPanel>
+
+    </Grid>
+        
+</Window>
